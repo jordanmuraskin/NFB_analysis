@@ -15,10 +15,6 @@ for dt in dataType:
             for subj in df['x']:
                 filepath = '/home2/cfroehlich/nfb3_preprocessed/working/%sft/ftest/_subject_id_%s/modelestimate/mapflow/_modelestimate0/results/%s%d.nii.gz' % (dt,subj,t,i)
                 x.append(filepath)
-    	#x = [a for a in x if '0040628' not in a ]
-    	#print x
-        print '#######################'
-        print len(x)
         subjs = len(x)
         merger = Merge()
         merger.inputs.in_files = x
