@@ -10,8 +10,9 @@ for dt in dataType:
     #get files
 
     df=read_csv('%s_analysis.csv' % dt)
-    x=[]
+
     for i in range(3,5):
+        x=[]
         for subj in df['x']:
             filepath = '/home2/cfroehlich/nfb3_preprocessed/working/%sft/ftest/_subject_id_%s/modelestimate/mapflow/_modelestimate0/results/%s%d.nii.gz' % (dt,subj,t,i)
             x.append(filepath)
