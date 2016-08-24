@@ -20,5 +20,10 @@ for dt in dataType:
         merger.inputs.in_files = x
         merger.inputs.dimension = 't'
         merger.inputs.output_type = 'NIFTI_GZ'
-        merger.inputs.out_file = './%s%d_merged.nii.gz'
+        merger.inputs.merged_file = './%s%d_merged.nii.gz'
         merger.run()
+
+df=read_csv('rest_analysis.csv')
+for indx,subj in enumerate(df['x']):
+    df['x'][indx] = '/home2/cfroehlich/nfb3_preprocessed/data/%s/resting.nii.gz' % subj
+df.to_csv('resting_filelist.txt',sep='\n',columns=['x'],index=False)
