@@ -20,7 +20,7 @@ for dt in dataType:
         merger.inputs.in_files = x
         merger.inputs.dimension = 't'
         merger.inputs.output_type = 'NIFTI_GZ'
-        merger.inputs.merged_file = './%s%d_merged.nii.gz'
+        merger.inputs.merged_file = './%s%d_merged.nii.gz' % (t,i)
         merger.run()
 
 df=read_csv('rest_analysis.csv')
